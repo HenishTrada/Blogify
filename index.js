@@ -10,7 +10,7 @@ const Blog = require("./models/blog");
 const app = express();
 const PORT = 8000;
 
-mongoose.connect("mongodb://127.0.0.1:27017/Blogify").then(e => {
+mongoose.connect("mongodb+srv://tradahenish94:a3BojmwOZUMvrMtE@cluster0.cwq6g6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(e => {
     console.log("MongoDB connected");
 })
 
