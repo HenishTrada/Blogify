@@ -10,9 +10,19 @@ const Blog = require("./models/blog");
 const app = express();
 const PORT = 8000;
 
-mongoose.connect("mongodb+srv://tradahenish94:a3BojmwOZUMvrMtE@cluster0.cwq6g6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(e => {
-    console.log("MongoDB connected");
-})
+async function connectToMongoDB() {
+    try {
+        await mongoose.connect("mongodb+srv://tradahenish94:a3BojmwOZUMvrMtE@cluster0.cwq6g6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log("MongoDB connected");
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+    }
+}
+
+connectToMongoDB();
 
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
