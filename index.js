@@ -12,10 +12,7 @@ const PORT = 8000;
 
 async function connectToMongoDB() {
     try {
-        await mongoose.connect("mongodb+srv://tradahenish94:a3BojmwOZUMvrMtE@cluster0.cwq6g6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
+        await mongoose.connect("mongodb+srv://tradahenish94:a3BojmwOZUMvrMtE@cluster0.cwq6g6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
         console.log("MongoDB connected");
     } catch (error) {
         console.error("Error connecting to MongoDB:", error);
